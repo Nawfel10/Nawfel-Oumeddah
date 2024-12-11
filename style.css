@@ -10,6 +10,11 @@ body {
     margin: 0 auto;
 }
 
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
 /* Style du header */
 header {
     background-color: #1c1c2e;
