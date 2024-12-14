@@ -1,9 +1,8 @@
-
+/* Style général */
 body {
     font-family: Helvetica, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    text-align: justify;
     margin: 0;
     padding: 0;
 }
@@ -13,10 +12,9 @@ body {
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
-    text-align:justify;
-        }
 }
 
+/* Responsiveness: éléments ajustés pour différentes tailles d'écran */
 .responsive {
     width: 100%;
     height: auto;
@@ -59,39 +57,40 @@ main {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+    flex-wrap: wrap; /* Permet aux articles et à la sidebar de se réorganiser sur de petits écrans */
 }
 
 .articles {
     width: 70%;
 }
 
-.article {
+.post {
     margin-bottom: 30px;
 }
 
-.article h2 {
+.post h2 {
     font-size: 2rem;
     color: #333;
 }
 
-.article p {
+.post p {
     font-size: 1.2rem;
     line-height: 1.6;
-    text-align: justify;
+    text-align: justify; /* Justifie le texte des articles */
 }
 
-.article .date {
+.post .date {
     font-size: 0.9rem;
     color: #777;
     margin-bottom: 10px;
 }
 
-.article a {
+.post a {
     color: #007bff;
     text-decoration: none;
 }
 
-.article a:hover {
+.post a:hover {
     text-decoration: underline;
 }
 
@@ -139,4 +138,67 @@ footer {
 
 footer p {
     font-size: 1rem;
+}
+
+/* Media Queries pour la Responsivité */
+
+/* Écran moyen (tablettes) : moins de 1024px */
+@media (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .articles {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Écran plus petit (smartphones) : moins de 768px */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .post h2 {
+        font-size: 1.8rem;
+    }
+
+    .post p {
+        font-size: 1rem;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Très petit écran (smartphones très petits) : moins de 480px */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header nav ul li a {
+        font-size: 1rem;
+    }
+
+    .post h2 {
+        font-size: 1.6rem;
+    }
+
+    .post p {
+        font-size: 0.9rem;
+    }
 }
