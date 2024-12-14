@@ -29,7 +29,7 @@ header {
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Taille de police pour grands écrans */
 }
 
 header nav ul {
@@ -48,7 +48,7 @@ header nav ul li {
 header nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Taille de police pour les liens du menu */
 }
 
 header nav ul li a:hover {
@@ -60,7 +60,6 @@ main {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
-    flex-wrap: nowrap; /* Empêche la flexbox de réorganiser les articles sur petits écrans */
 }
 
 .articles {
@@ -72,18 +71,18 @@ main {
 }
 
 .post h2 {
-    font-size: 2rem;
+    font-size: 2rem; /* Taille de police pour les titres d'articles */
     color: #333;
 }
 
 .post p {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Taille de police pour les paragraphes */
     line-height: 1.6;
     text-align: justify; /* Justifie le texte des articles */
 }
 
 .post .date {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Taille de la date */
     color: #777;
     margin-bottom: 10px;
 }
@@ -107,7 +106,7 @@ main {
 }
 
 .sidebar h3 {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Taille du titre de la sidebar */
     margin-bottom: 15px;
 }
 
@@ -122,7 +121,7 @@ main {
 
 .sidebar ul li a {
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Taille de police des liens de la sidebar */
     color: #fff;
 }
 
@@ -140,7 +139,7 @@ footer {
 }
 
 footer p {
-    font-size: 1rem;
+    font-size: 1rem; /* Taille de police pour le texte du footer */
 }
 
 /* Media Queries pour la Responsivité */
@@ -148,7 +147,7 @@ footer p {
 /* Écran moyen (tablettes) : moins de 1024px */
 @media (max-width: 1024px) {
     main {
-        flex-direction: row; /* Laissez les articles et la sidebar côte à côte */
+        flex-direction: row;
         justify-content: space-between;
     }
 
@@ -158,66 +157,102 @@ footer p {
 
     .sidebar {
         width: 25%;
-        margin-left: 20px; /* Ajoute de l'espace entre les articles et la sidebar */
+        margin-left: 20px;
     }
 
-    header nav ul {
-        justify-content: flex-start; /* Aligne le menu à gauche */
+    /* Ajustement des textes pour les écrans moyens */
+    header h1 {
+        font-size: 2.2rem; /* Réduction de la taille du titre principal */
+    }
+
+    header nav ul li a {
+        font-size: 1.1rem; /* Réduction de la taille des liens de menu */
+    }
+
+    .post h2 {
+        font-size: 1.8rem; /* Réduction des titres d'articles */
+    }
+
+    .post p {
+        font-size: 1.1rem; /* Réduction de la taille des paragraphes */
+    }
+
+    .sidebar h3 {
+        font-size: 1.3rem; /* Réduction de la taille du titre de la sidebar */
+    }
+
+    .sidebar ul li a {
+        font-size: 1rem; /* Réduction de la taille des liens de la sidebar */
+    }
+
+    footer p {
+        font-size: 0.9rem; /* Réduction de la taille du texte du footer */
     }
 }
 
 /* Écran plus petit (smartphones) : moins de 768px */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Réduction de la taille du titre principal sur mobile */
     }
 
-    header nav ul li {
-        display: inline-block; /* Maintient le menu en ligne */
-        margin: 0 10px; /* Réduit l'espace entre les éléments */
+    header nav ul li a {
+        font-size: 1rem; /* Taille de police plus petite pour les liens de menu */
     }
 
     .post h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem; /* Réduction des titres des articles */
     }
 
     .post p {
-        font-size: 1rem;
-    }
-
-    /* Garder la sidebar à droite des articles */
-    main {
-        flex-direction: row; /* Garder la disposition en ligne */
-        justify-content: space-between;
+        font-size: 1rem; /* Réduction de la taille des paragraphes */
     }
 
     .sidebar {
-        width: 30%; /* Augmenter la largeur de la sidebar si nécessaire */
-        margin-left: 20px;
+        width: 100%; /* La sidebar prend toute la largeur sur les petits écrans */
+        margin-top: 20px; /* Espacement entre l'article et la sidebar */
+    }
+
+    .sidebar h3 {
+        font-size: 1.2rem; /* Réduction de la taille du titre de la sidebar */
+    }
+
+    .sidebar ul li a {
+        font-size: 0.9rem; /* Réduction de la taille des liens de la sidebar */
+    }
+
+    footer p {
+        font-size: 0.8rem; /* Réduction de la taille du texte du footer */
     }
 }
 
 /* Très petit écran (smartphones très petits) : moins de 480px */
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Réduction de la taille du titre principal sur très petit écran */
     }
 
     header nav ul li a {
-        font-size: 1rem;
+        font-size: 0.9rem; /* Taille de police encore plus petite pour les liens de menu */
     }
 
     .post h2 {
-        font-size: 1.6rem;
+        font-size: 1.4rem; /* Réduction maximale des titres des articles */
     }
 
     .post p {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Réduction des paragraphes pour tenir dans les petits écrans */
     }
 
-    /* Ajuster les tailles */
-    .sidebar {
-        width: 100%; /* La sidebar prend toute la largeur sur les petits écrans */
-        margin-top: 20px; /* Espacement entre l'article et la sidebar */
+    .sidebar h3 {
+        font-size: 1.1rem; /* Réduction de la taille du titre de la sidebar */
+    }
+
+    .sidebar ul li a {
+        font-size: 0.8rem; /* Taille de police la plus petite pour les liens de la sidebar */
+    }
+
+    footer p {
+        font-size: 0.7rem; /* Réduction de la taille du texte du footer */
     }
 }
