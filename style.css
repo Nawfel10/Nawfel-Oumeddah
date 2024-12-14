@@ -38,6 +38,7 @@ header nav ul {
     margin: 0;
     display: flex; /* Permet au menu de rester en ligne */
     justify-content: center; /* Centre le menu horizontalement */
+    margin: 0 10px; /* Ajout d'une marge pour espacer le menu sur mobile */
 }
 
 header nav ul li {
@@ -254,5 +255,9 @@ footer p {
 
     footer p {
         font-size: 0.7rem; /* Réduction de la taille du texte du footer */
+    }
+
+    header nav ul {
+        margin: 0 5px; /* Réduction de la marge sur mobile pour éviter que les éléments ne touchent les bords */
     }
 }
