@@ -1,263 +1,211 @@
-/* Style général */
-body {
-    font-family: Helvetica, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
+/* Définition des couleurs principales */
+:root {
+    --blue-light: #5fa8d3;
+    --blue-dark: #2a6d93;
+    --blue-accent: #1e4b72;
+    --white: #ffffff;
+    --gray-light: #f4f4f4;
+    --gray-dark: #333;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
+/* Reset des marges et padding */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-/* Responsiveness: éléments ajustés pour différentes tailles d'écran */
-.responsive {
-    width: 100%;
-    height: auto;
+/* Corps du site */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--gray-light);
+    color: var(--gray-dark);
+    line-height: 1.6;
 }
 
-/* Style du header */
+/* En-tête */
 header {
-    background-color: #1c1c2e;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    background-color: var(--blue-dark);
+    color: var(--white);
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 header h1 {
-    font-size: 2.5rem; /* Taille de police pour grands écrans */
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Permet au menu de rester en ligne */
-    justify-content: center; /* Centre le menu horizontalement */
-    margin: 0 10px; /* Ajout d'une marge pour espacer le menu sur mobile */
-}
-
-header nav ul li {
-    display: inline-block; /* Permet d'afficher les éléments du menu en ligne */
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem; /* Taille de police pour les liens du menu */
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Style des articles */
-main {
+nav ul {
+    list-style-type: none;
     display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
+    gap: 20px;
 }
 
+nav a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--blue-light);
+}
+
+/* Conteneur principal */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+/* Section des articles */
 .articles {
-    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
 }
 
 .post {
-    margin-bottom: 30px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 .post h2 {
-    font-size: 2rem; /* Taille de police pour les titres d'articles */
-    color: #333;
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: var(--blue-dark);
 }
 
-.post p {
-    font-size: 1.2rem; /* Taille de police pour les paragraphes */
-    line-height: 1.6;
-    text-align: justify; /* Justifie le texte des articles */
-}
-
-.post .date {
-    font-size: 0.9rem; /* Taille de la date */
-    color: #777;
+.date {
+    font-size: 0.875rem;
+    color: var(--gray-dark);
     margin-bottom: 10px;
 }
 
 .post a {
-    color: #007bff;
+    display: inline-block;
+    margin-top: 10px;
     text-decoration: none;
+    background-color: var(--blue-light);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .post a:hover {
-    text-decoration: underline;
+    background-color: var(--blue-accent);
 }
 
 /* Sidebar */
 .sidebar {
-    width: 25%;
-    background-color: #1c1c2e;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 30px;
 }
 
 .sidebar h3 {
-    font-size: 1.5rem; /* Taille du titre de la sidebar */
+    font-size: 1.25rem;
+    color: var(--blue-dark);
     margin-bottom: 15px;
 }
 
 .sidebar ul {
     list-style-type: none;
-    padding: 0;
 }
 
-.sidebar ul li {
+.sidebar li {
     margin-bottom: 10px;
 }
 
-.sidebar ul li a {
+.sidebar a {
     text-decoration: none;
-    font-size: 1.1rem; /* Taille de police des liens de la sidebar */
-    color: #fff;
+    color: var(--blue-dark);
+    transition: color 0.3s ease;
 }
 
-.sidebar ul li a:hover {
-    color: #fff;
+.sidebar a:hover {
+    color: var(--blue-light);
 }
 
-/* Footer */
+/* Pied de page */
 footer {
-    background-color: #1c1c2e;
-    color: #fff;
-    text-align: right;
-    padding: 10px 0;
+    background-color: var(--blue-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
     margin-top: 40px;
+    font-size: 0.875rem;
 }
 
-footer p {
-    font-size: 1rem; /* Taille de police pour le texte du footer */
-}
-
-/* Media Queries pour la Responsivité */
-
-/* Écran moyen (tablettes) : moins de 1024px */
-@media (max-width: 1024px) {
-    main {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
+/* Responsivité */
+@media (max-width: 1200px) {
     .articles {
-        width: 70%;
-    }
-
-    .sidebar {
-        width: 25%;
-        margin-left: 20px;
-    }
-
-    /* Ajustement des textes pour les écrans moyens */
-    header h1 {
-        font-size: 2.2rem; /* Réduction de la taille du titre principal */
-    }
-
-    header nav ul li a {
-        font-size: 1.1rem; /* Réduction de la taille des liens de menu */
-    }
-
-    .post h2 {
-        font-size: 1.8rem; /* Réduction des titres d'articles */
-    }
-
-    .post p {
-        font-size: 1.1rem; /* Réduction de la taille des paragraphes */
-    }
-
-    .sidebar h3 {
-        font-size: 1.3rem; /* Réduction de la taille du titre de la sidebar */
-    }
-
-    .sidebar ul li a {
-        font-size: 1rem; /* Réduction de la taille des liens de la sidebar */
-    }
-
-    footer p {
-        font-size: 0.9rem; /* Réduction de la taille du texte du footer */
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-/* Écran plus petit (smartphones) : moins de 768px */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8rem; /* Réduction de la taille du titre principal sur mobile */
+    .articles {
+        grid-template-columns: 1fr;
     }
 
-    header nav ul li a {
-        font-size: 1rem; /* Taille de police plus petite pour les liens de menu */
+    header .container {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .post h2 {
-        font-size: 1.6rem; /* Réduction des titres des articles */
-    }
-
-    .post p {
-        font-size: 1rem; /* Réduction de la taille des paragraphes */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
     }
 
     .sidebar {
-        width: 100%; /* La sidebar prend toute la largeur sur les petits écrans */
-        margin-top: 20px; /* Espacement entre l'article et la sidebar */
-    }
-
-    .sidebar h3 {
-        font-size: 1.2rem; /* Réduction de la taille du titre de la sidebar */
-    }
-
-    .sidebar ul li a {
-        font-size: 0.9rem; /* Réduction de la taille des liens de la sidebar */
-    }
-
-    footer p {
-        font-size: 0.8rem; /* Réduction de la taille du texte du footer */
+        margin-top: 20px;
     }
 }
 
-/* Très petit écran (smartphones très petits) : moins de 480px */
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.5rem; /* Réduction de la taille du titre principal sur très petit écran */
-    }
-
-    header nav ul li a {
-        font-size: 0.9rem; /* Taille de police encore plus petite pour les liens de menu */
+        font-size: 1.5rem;
     }
 
     .post h2 {
-        font-size: 1.4rem; /* Réduction maximale des titres des articles */
+        font-size: 1.25rem;
     }
 
-    .post p {
-        font-size: 0.9rem; /* Réduction des paragraphes pour tenir dans les petits écrans */
+    .post a {
+        font-size: 0.875rem;
+        padding: 8px 15px;
     }
 
-    .sidebar h3 {
-        font-size: 1.1rem; /* Réduction de la taille du titre de la sidebar */
+    .sidebar {
+        padding: 10px;
     }
 
-    .sidebar ul li a {
-        font-size: 0.8rem; /* Taille de police la plus petite pour les liens de la sidebar */
-    }
-
-    footer p {
-        font-size: 0.7rem; /* Réduction de la taille du texte du footer */
-    }
-
-    header nav ul {
-        margin: 0 5px; /* Réduction de la marge sur mobile pour éviter que les éléments ne touchent les bords */
+    footer {
+        font-size: 0.75rem;
     }
 }
